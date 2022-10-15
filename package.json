@@ -1,0 +1,22 @@
+{
+  "name": "surreal-db",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "concurrently \"yarn database\" \"yarn server\"",
+    "server": "nodemon index.js",
+    "database": "surreal.exe start --log debug --user root --pass root memory",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^7.4.0",
+    "express": "^4.18.2",
+    "lodash": "^4.17.21",
+    "nodemon": "^2.0.20",
+    "surrealdb.js": "^0.5.0"
+  }
+}
