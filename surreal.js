@@ -1,10 +1,7 @@
 import Surreal from "surrealdb.js";
+import { database, namespace, password, username } from "./constatns.js";
 
 const db = new Surreal("http://127.0.0.1:8000/rpc");
-const namespace = "test";
-const database = "test";
-const username = "root";
-const password = "root";
 export class surrealDB {
   constructor(e) {
     this.connection = false;
@@ -43,7 +40,6 @@ export class surrealDB {
     const res = await db.query(query, {
       tb: table,
     });
-    console.log("static async query", res);
     return res;
   }
   static async selectTable({ table }) {
