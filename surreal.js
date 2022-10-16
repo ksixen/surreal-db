@@ -2,7 +2,7 @@ import Surreal from "surrealdb.js";
 import { database, namespace, password, username } from "./constatns.js";
 
 const db = new Surreal("http://127.0.0.1:8000/rpc");
-export class surrealDB {
+class surrealDB {
   constructor(e) {
     this.connection = false;
   }
@@ -33,7 +33,7 @@ export class surrealDB {
 
   static async updateColumn({ table, props }) {
     // Update a person record with a specific id
-    await db.change(table, props);
+    return await db.change(table, props);
   }
   static async query({ query, table }) {
     // Perform a custom advanced query
@@ -49,3 +49,4 @@ export class surrealDB {
     });
   }
 }
+export default surrealDB

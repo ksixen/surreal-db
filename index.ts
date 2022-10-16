@@ -5,7 +5,7 @@ import {
   getUsersList,
   loginUser,
 } from "./reqFuncs/person.js";
-import { surrealDB } from "./surreal.js";
+import surrealDB from "./surreal.js";
 
 const PORT = 4000;
 const app = express();
