@@ -1,6 +1,6 @@
-import _ from "lodash";
+// import _ from "lodash";
 import responseObj from "../hooks/responseObj.js";
-import { surrealDB } from "../surreal.js";
+import surrealDB from "../surreal.js"
 
 export const getUsersList = async (req, res) => {
   const select = await surrealDB.query({
@@ -22,7 +22,7 @@ export const getUserById = async (req, res) => {
 };
 export const editUser = async (req, res) => {
   const { user_id, name } = req.query;
-  if ((!user_id, !name)) {
+  if ((!user_id || !name)) {
     return res.send("Error");
   }
   const select = await surrealDB.updateColumn({
@@ -35,7 +35,7 @@ export const editUser = async (req, res) => {
 };
 export const loginUser = async (req, res) => {
   const { password, login } = req.query;
-  if ((!password, !login)) {
+  if ((!password || !login)) {
     return res.send("Error");
   }
   const select = await surrealDB.query({

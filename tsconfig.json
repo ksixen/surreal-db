@@ -1,0 +1,8 @@
+{
+    "compilerOptions": {
+        "allowJs": true,
+        "module": "NodeNext",
+        "esModuleInterop": true,
+        "lib": ["ES2016", "DOM"]
+    }
+}
