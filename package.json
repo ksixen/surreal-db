@@ -5,7 +5,7 @@
   "type": "module",
   "main": "index.ts",
   "scripts": {
-    "start": "concurrently \"yarn database\" \"yarn server\"",
+    "start": "concurrently \"npm run database\" \"npm run server\"",
     "server": "ts-node-esm index.ts",
     "database": "surreal.exe start --log debug --user root --pass root file:./db-data",
     "test": "echo \"Error: no test specified\" && exit 1"
